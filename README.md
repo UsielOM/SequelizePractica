@@ -32,6 +32,8 @@ _Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para 
 
 Hay un archivo en la carpeta [app/configBd.js].
 En la cual es el archivo de configuracion para la comunicacion de su BD donde pondran sus datos 
+
+
 ![image](https://user-images.githubusercontent.com/90886892/175795513-c6528b93-ba37-4201-b3ba-6c67dc3ea3cb.png)
 
 
