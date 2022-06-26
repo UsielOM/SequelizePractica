@@ -12,7 +12,7 @@ _Cundo clonen el el proyecto no se les olvide instalar node express
 ```
 npm i express
 ```
-### Ejecuciom
+### Ejecucion
 
 _Despues de haber instlado el node en el proyecto para poder ejecutarlo es con el siguiente script en su trminal._
 
