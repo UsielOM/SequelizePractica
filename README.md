@@ -41,3 +41,8 @@ En la cual es el archivo de configuracion para la comunicacion de su BD donde po
 
 Es importante que creen las mismas tablas con los mismos datos en su MySQL con sus respectivas llaves foraneas y Primarias
 Llenar las tablas de info 
+
+### RESULTADO
+
+![image](https://user-images.githubusercontent.com/90886892/175795599-d1c19777-f0fc-411b-9ee4-e811943704bf.png)
+
