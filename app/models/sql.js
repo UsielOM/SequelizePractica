@@ -3,6 +3,7 @@ const sequelize = require('./configBd');
 const User = require('./Table/User');
 const Roll = require('./Table/Roll');
 const Asignacion = require('./Table/Asignacion');
+const relaciones = require('./relaciones');
 
 
 init = function() {
@@ -12,11 +13,8 @@ init = function() {
         console.error("conexión no establecida: ", err);
 
     });
-    User.hasMany(Asignacion);
-    Asignacion.belongsTo(User);
-    Roll.hasMany(Asignacion);
-    Asignacion.belongsTo(Roll);
-    // Asignacion.belongsTo(Roll);
+    relaciones();
+
     // createTable(Asignacion);
 }
 
