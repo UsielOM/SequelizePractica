@@ -11,6 +11,10 @@ const Prueba = sequelize.define('prueba', {
         type: Sequelize.DataTypes.STRING,
 
     },
+    user_email: {
+        type: Sequelize.DataTypes.STRING,
+
+    },
     user_password: {
         type: Sequelize.DataTypes.STRING,
 
