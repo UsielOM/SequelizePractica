@@ -11,6 +11,7 @@ const Roll = sequelize.define('roll', {
         type: Sequelize.DataTypes.STRING,
 
     }
+
 }, {
     freezeTableName: true,
     timestamps: false
