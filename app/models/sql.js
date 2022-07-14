@@ -23,6 +23,10 @@ getUsers = function(callback) {
     User.findAll({ attributes: ['FirstName', 'LastName'] }).then(registros => callback(registros));
 };
 
+getRolles = function(callback) {
+    Roll.findAll().then(roll => callback(roll));
+};
+
 getAsignacion = function(callback) {
     Asignacion.findAll({
         include: [
@@ -33,24 +37,43 @@ getAsignacion = function(callback) {
     }).then(asignacion => callback(asignacion));
 }
 
+getMaximoUsers = function(callback) {
+    User.findAll({
+        attributes: [
+            [sequelize.fn('MAX', sequelize.col('id_User')), 'id_User']
+
+        ],
+        raw: true
+    }).then(result => callback(result));
+}
+
 //POST
 
-postUsuarios = function(request, callback) {
-    Usuarios.create({
-        Nombre: request.Nombre,
-        Apellido: request.Apellido,
-        Telefono: request.Telefono,
-        Correo: request.Correo
-    }).then(callback(true));
+postRegistros = function(request, callback) {
+    User.create({
+            FirstName: request.FirstName,
+            LastName: request.LastName,
+            Phone: request.Phone,
+            Email: request.Email,
+            Password: request.Password
+        },
+
+    ).then(callback(true));
 
 };
+postAsignacion = function(request, callback) {
+    Asignacion.create({
+        userIdUser: request.userIdUser,
+        rollRollId: request.rollRollId
+    }).then(callback(true));
+}
 
 postPrueba = function(request, callback) {
     Prueba.create({
         user_name: request.user_name,
         user_email: request.user_email,
         user_password: request.user_password
-    }).then(callback(true));
+    }).then(callback());
 }
 
 
@@ -58,5 +81,9 @@ postPrueba = function(request, callback) {
 module.exports.getAsignacion = getAsignacion;
 module.exports.init = init;
 module.exports.getUsers = getUsers;
+module.exports.getRolles = getRolles;
+module.exports.getMaximoUsers = getMaximoUsers;
 module.exports.postPrueba = postPrueba;
+module.exports.postRegistros = postRegistros;
+module.exports.postAsignacion = postAsignacion;
 // const Roll = require('./Roll');
